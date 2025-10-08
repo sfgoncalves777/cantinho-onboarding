@@ -1,0 +1,169 @@
+:root {
+  --line-color: {{lineColor}};
+  --background-color: {{backgroundColor}};
+
+  --ads-background-color: {{adsBackgroundColor}};
+  --ads-border-color: {{addBorderColor}};
+
+  --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
+  --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
+
+  --buttons-solid-background-color: {{buttonsSolidBackgroundColor}};
+  --buttons-solid-text-color: {{buttonsSolidTextColor}};
+
+  --buttons-remove-background-color: {{buttonsRemoveBackgroundColor}};
+  --buttons-remove-text-color: {{buttonsRemoveTextColor}};
+
+  --text-title-color: {{textTitleColor}};
+  --text-default-color: {{textDefaultColor}};
+  --text-highlight-color: {{textHiglightColor}};
+
+  --forms-label-color: {{formsLabelColor}};
+
+  --forms-input-background-color: {{formsInputBackgroundColor}};
+  --forms-input-text-color: {{formsInputTextColor}};
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-default-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 15px;
+  border-bottom: 4px solid var(--line-color);
+}
+
+header img {
+  width: 140px;
+}
+
+header a {
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+
+  display: flex;
+}
+
+header nav {
+  display: flex;
+}
+
+header :first-child {
+  margin-right: 15px;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+main section div > h1 {
+  font-size: clamp(35px, 5vw, 38px);
+  font-weight: 500;
+  margin: 10px 0px 5px;
+  color: var(--text-title-color);
+}
+
+main section div > p {
+  font-size: clamp(16px, 3vw, 18px);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--text-default-color);
+}
+
+main section div > div h2 {
+  font-size: clamp(20px, 3vw, 23px);
+  font-weight: 500;
+  margin: 0;
+  color: var(--text-title-color);
+  margin: 30px 0px 5px;
+}
+
+main section div > div > a {
+  display: flex;
+  align-items: center;
+  color: var(--buttons-transparent-text-color);
+  font-size: clamp(16px, 3vw, 18px);
+}
+
+main section div > div > a > svg {
+  height: 100%;
+}
+
+main section div > div > a > span {
+  margin-right: 5px;
+}
+
+main > img {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 35px 45px 20px;
+  }
+
+  header img {
+    width: 230px;
+  }
+
+  header a {
+    font-size: 20px;
+  }
+
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 45px;
+  }
+
+  main section {
+    width: 50%;
+  }
+
+  .data {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main > img {
+    display: block;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main section h1 {
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  main section {
+    width: 50%;
+    padding-right: 40px;
+  }
+
+  main > img {
+    width: 40%;
+    max-height: 450px;
+  }
+}

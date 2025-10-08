@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <a href="https://wa.me/55{{whatsapp}}" target="_blank" rel="noopener noreferrer">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Login</h1>
+    <form id="login_form">
+      <fieldset id="email">
+        <label for="email">
+          <span>E-mail</span>
+        </label>
+        <input name="email" type="email" placeholder="Digite seu e-mail">
+      </fieldset>
+      <fieldset id="password">
+        <label for="password">
+          <span>Senha</span>
+        </label>
+        <input name="password" type="password" placeholder="Digite sua senha">
+      </fieldset>
+      <button>Entrar</button>
+    </form>
+  </main>
+</body>
+
+</html>

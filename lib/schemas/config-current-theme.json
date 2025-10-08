@@ -1,0 +1,270 @@
+{
+  "$id": "config-current-theme",
+  "type": "object",
+  "required": [
+    "logoFileName",
+    "faviconFileName",
+    "contents",
+    "colors"
+  ],
+  "properties": {
+    "logoFileName": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\.(svg|jpe?g|png)$"
+    },
+    "faviconFileName": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\.(svg|jpe?g|png|ico)$"
+    },
+    "contents": {
+      "type": "object",
+      "required": [
+        "home",
+        "about",
+        "propertySale",
+        "propertyRent"
+      ],
+      "properties": {
+        "home": {
+          "type": "object",
+          "required": [
+            "heroImageFileName",
+            "heroText",
+            "metaDescription"
+          ],
+          "properties": {
+            "heroImageFileName": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\.(svg|jpe?g|png)$"
+            },
+            "heroText": {
+              "type": "string",
+              "minLength": 1
+            },
+            "metaDescription": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "about": {
+          "type": "object",
+          "required": [
+            "heroImageFileName",
+            "heroText",
+            "metaDescription"
+          ],
+          "properties": {
+            "heroImageFileName": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\.(svg|jpe?g|png)$"
+            },
+            "heroText": {
+              "type": "string",
+              "minLength": 1
+            },
+            "metaDescription": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "propertySale": {
+          "type": "object",
+          "required": [
+            "metaDescription"
+          ],
+          "properties": {
+            "metaDescription": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "propertyRent": {
+          "type": "object",
+          "required": [
+            "metaDescription"
+          ],
+          "properties": {
+            "metaDescription": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "colors": {
+      "type": "object",
+      "required": [
+        "line",
+        "background",
+        "buttons",
+        "text",
+        "forms",
+        "ads"
+      ],
+      "properties": {
+        "line": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 9
+        },
+        "background": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 9
+        },
+        "buttons": {
+          "type": "object",
+          "required": [
+            "transparent",
+            "solid",
+            "remove"
+          ],
+          "properties": {
+            "transparent": {
+              "type": "object",
+              "required": [
+                "text",
+                "border"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                },
+                "border": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                }
+              }
+            },
+            "solid": {
+              "type": "object",
+              "required": [
+                "background",
+                "text"
+              ],
+              "properties": {
+                "background": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                }
+              }
+            },
+            "remove": {
+              "type": "object",
+              "required": [
+                "background",
+                "text"
+              ],
+              "properties": {
+                "background": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "type": "object",
+          "required": [
+            "title",
+            "default",
+            "highlight"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            },
+            "default": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            },
+            "highlight": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            }
+          }
+        },
+        "forms": {
+          "type": "object",
+          "required": [
+            "label",
+            "input"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            },
+            "input": {
+              "type": "object",
+              "required": [
+                "background",
+                "text"
+              ],
+              "properties": {
+                "background": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 4,
+                  "maxLength": 9
+                }
+              }
+            }
+          }
+        },
+        "ads": {
+          "type": "object",
+          "required": [
+            "background",
+            "border"
+          ],
+          "properties": {
+            "background": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            },
+            "border": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 9
+            }
+          }
+        }
+      }
+    }
+  }
+}

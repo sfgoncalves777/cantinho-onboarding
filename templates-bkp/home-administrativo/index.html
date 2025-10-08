@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <button onclick="logout()" >Sair</button>
+    </nav>
+  </header>
+  <main>
+    <h1>Bem-Vindo <span id="user_name"></span></h1>
+    <section>
+      <a href="/administrativo/imoveis/alugar/index.html">
+        <img src="/assets/icons/icon-calendar.svg" alt="alugar" />
+        <h2>Imóveis para alugar</h2>
+      </a>
+      <a href="/administrativo/imoveis/vender/index.html">
+        <img src="/assets/icons/icon-dollar.svg" alt="venda" />
+        <h2>Imóveis para venda</h2>
+      </a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <button onclick="logout()">Sair</button>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <h1>Editar imóvel para vender</h1>
+      <a href="/administrativo/imoveis/vender/index.html">
+        {{iconArrowLeft}}
+        <span>voltar</span>
+      </a>
+    </header>
+    <form onsubmit="submitForm(event)">
+      <div>
+        <header>
+          <h2>Status do imóvel</h2>
+        </header>
+        <div class="container">
+          <fieldset>
+            <label for="select_status_property">Situação atual</label>
+            <select id="select_status_property" name="status_property">
+              <option disabled selected hidden>Selecione</option>
+              <option value="available">Disponível</option>
+              <option value="maintenance">Em manutenção</option>
+              <option value="constructing">Em construção</option>
+              <option value="sold">Vendido</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="availability">Disponibilidade</label>
+            <select name="availability" id="availability">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="imediata">Imediata</option>
+              <option value="6m">Em até 6 meses</option>
+              <option value="1a">Em até 1 ano</option>
+              <option value="3a">Em até 3 anos</option>
+              <option value="indeterminada">Indeterminada</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="publish">Publicar</label>
+            <select name="publish" id="publish">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+      <div>
+        <header>
+          <h2>Dados do imóvel</h2>
+        </header>
+        <div class="container">
+          <fieldset>
+            <label for="city">Cidade</label>
+            <select name="city" id="city" onchange="handleCityChange()" onfocus="buildCities()">
+              <option disabled selected hidden>Selecione</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="district">Bairro</label>
+            <select name="district" id="district">
+              <option disabled selected hidden>Selecione</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="street">Rua</label>
+            <input type="text" id="street" name="street" required>
+          </fieldset>
+          <div class="item">
+            <fieldset>
+              <label for="number">Número</label>
+              <input type="text" id="number" name="number" required>
+            </fieldset>
+            <fieldset>
+              <label for="complement">Complemento</label>
+              <input type="text" name="complement" id="complement">
+            </fieldset>
+          </div>
+          <fieldset>
+            <label for="type">Imóvel</label>
+            <select name="type" id="type">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Kitnet">Kitnet</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="rooms">Quartos</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="rooms" id="rooms" value="1" id="room-1" />
+                <span>1</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="rooms" value="2" id="room-2" />
+                <span>2</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="rooms" value="3" id="room-3" />
+                <span>3</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="rooms" value="4" id="room-4" />
+                <span>4+</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="bathrooms">Banheiros</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" id="bathrooms" name="bathrooms" value="1" id="bathroom-1" />
+                <span>1</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="bathrooms" value="2" id="bathroom-2" />
+                <span>2</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="bathrooms" value="3" id="bathroom-3" />
+                <span>3</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="bathrooms" value="4" id="bathroom-4" />
+                <span>4+</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="garage_spaces">Garagens</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" id="garage_spaces" value="0" id="garage_space-0" />
+                <span>0</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="1" id="garage_space-1" />
+                <span>1</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="2" id="garage_space-2" />
+                <span>2</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="3" id="garage_space-3" />
+                <span>3</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="garage_spaces" value="4" id="garage_space-4" />
+                <span>4+</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div>
+        <header>
+          <h2>Imagens do imóvel</h2>
+          <button onclick="addImageField()" type="button">+ adicionar</button>
+        </header>
+        <div class="container" id="images">
+        </div>
+      </div>
+      <div>
+        <header>
+          <h2>Dados da venda</h2>
+        </header>
+        <div class="container">
+          <fieldset>
+            <label for="owner">Proprietário</label>
+            <input type="text" name="owner" id="owner" required>
+          </fieldset>
+          <fieldset>
+            <label for="sale">Valor</label>
+            <input type="text" id="sale" oninput="formatCurrency(this)">
+          </fieldset>
+        </div>
+      </div>
+      <div>
+        <header>
+          <h2>Despesas adicionais</h2>
+          <button type="button" onclick="addCostsField()">+ adicionar</button>
+        </header>
+        <div class="container" id="costs">
+        </div>
+      </div>
+      <footer>
+        <header>
+          <h2>Finalizar cadastro</h2>
+        </header>
+        <div class="item">
+          <button type="submit" class="save">Salvar</button>
+          <button type="button" onclick="deleteProperty()">Excluir</button>
+        </div>
+      </footer>
+    </form>
+  </main>
+</body>
+
+</html>

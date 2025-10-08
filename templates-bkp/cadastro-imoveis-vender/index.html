@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icons/{{faviconFileName}}">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/images/{{logoFileName}}" alt="logo" />
+    </a>
+    <nav>
+      <a href="/administrativo/index.html">Home</a>
+      <button onclick="logout()" >Sair</button>
+    </nav>
+  </header>
+  <main>
+    <header>
+      <div>
+        <h1>Imóveis para vender</h1>
+        <a href="/administrativo/imoveis/vender/cadastrar/index.html">+ adicionar imóvel</a>
+      </div>
+      <select id="select_status_property">
+        <option value="all">Todos imóveis</option>
+        <option value="available">Disponíveis</option>
+        <option value="sold">Vendidos</option>
+        <option value="maintenance">Em manutenção</option>
+        <option value="constructing">Em construção</option>
+      </select>
+    </header>
+    <section id="properties_container">
+    </section>
+    <section id="properties_filtered_container"></section>
+  </main>
+</body>
+
+</html>

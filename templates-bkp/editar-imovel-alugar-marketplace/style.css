@@ -1,0 +1,353 @@
+:root {
+  --line-color: {{lineColor}};
+  --background-color: {{backgroundColor}};
+
+  --ads-background-color: {{adsBackgroundColor}};
+  --ads-border-color: {{addBorderColor}};
+
+  --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
+  --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
+
+  --buttons-solid-background-color: {{buttonsSolidBackgroundColor}};
+  --buttons-solid-text-color: {{buttonsSolidTextColor}};
+
+  --buttons-remove-background-color: {{buttonsRemoveBackgroundColor}};
+  --buttons-remove-text-color: {{buttonsRemoveTextColor}};
+
+  --text-title-color: {{textTitleColor}};
+  --text-default-color: {{textDefaultColor}};
+  --text-highlight-color: {{textHiglightColor}};
+
+  --forms-label-color: {{formsLabelColor}};
+
+  --forms-input-background-color: {{formsInputBackgroundColor}};
+  --forms-input-text-color: {{formsInputTextColor}};
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-default-color);
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+body>header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 15px;
+  border-bottom: 4px solid var(--line-color);
+}
+
+body>header img {
+  width: 140px;
+}
+
+body>header a {
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+
+  display: flex;
+}
+
+body>header nav {
+  display: flex;
+}
+
+body>header button {
+  background: none;
+  color: var(--buttons-transparent-text-color);
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 40px;
+  font-weight: 500;
+}
+
+main {
+  padding: 20px;
+}
+
+main>header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main>header h1 {
+  font-size: 24px;
+  color: var(--text-title-color);
+  font-weight: 400;
+}
+
+main>header a {
+  font-size: 18px;
+  color: var(--buttons-transparent-text-color);
+  display: flex;
+  align-items: center;
+}
+
+main>header a img {
+  width: 18px;
+  margin-right: 5px;
+}
+
+main form header {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+  align-items: center;
+}
+
+main form header h2 {
+  font-size: 18px;
+  color: var(--text-title-color);
+  margin: 15px 0 10px;
+  font-weight: 400;
+}
+
+main form header button {
+  font-size: 18px;
+  background: none;
+  color: var(--buttons-transparent-text-color);
+  height: 40px;
+}
+
+main form fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+main form label {
+  font-size: 16px;
+  color: var(--forms-label-color);
+  margin-bottom: 5px;
+}
+
+main form fieldset input,
+main form fieldset select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: var(--forms-input-background-color);
+  color: var(--forms-input-text-color);
+  cursor: pointer;
+}
+
+.radio-group {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.container fieldset:last-child .radio-group {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.radio-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--forms-input-background-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+/* Esconde o input */
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+/* Aplica a cor azul e letra branca no item inteiro selecionado */
+.radio-option:has(input[type="radio"]:checked) {
+  background-color: var(--forms-input-text-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+.image_field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.image_field .image_box .preview {
+  display: none;
+}
+
+.image_field .image_box {
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  background: var(--forms-input-background-color);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+.image_field .image_box .placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--buttons-transparent-text-color);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.image_field .image_box input[type="file"] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.image_field .image_box .preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container button {
+  width: 100%;
+  height: 40px;
+  background-color: var(--buttons-remove-background-color);
+  color: var(--buttons-remove-text-color);
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#costs > div {
+  margin-bottom: 10px;
+}
+
+main form footer {
+  margin-top: 15px;
+}
+
+main form footer>div {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+main form footer button {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+main form footer button {
+  background-color: var(--buttons-remove-background-color);
+  color: var(--buttons-remove-text-color);
+}
+
+main form footer button.save {
+  background-color: var(--buttons-solid-background-color);
+  color: var(--buttons-solid-text-color)
+}
+
+@media screen and (min-width: 768px) {
+  body>header {
+    padding: 35px 45px 20px;
+  }
+
+  body>header img {
+    width: 230px;
+  }
+
+  body>header a {
+    font-size: 20px;
+  }
+
+  main {
+    padding: 20px 45px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    column-gap: 20px;
+    width: 100%;
+  }
+
+  .container .item {
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+  }
+
+  main form fieldset {
+    width: 100%;
+  }
+
+  main form .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  main form .container>div,
+  main form .container>fieldset {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  main form .container>.image_field {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  main form footer {
+    max-width: 500px;
+  }
+}
