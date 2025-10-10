@@ -1,6 +1,6 @@
 /.vscode
 /node_modules
-/builds
+/builds/*
 .env
 /setup/files/icons/*
 /setup/files/images/*
