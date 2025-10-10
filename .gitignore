@@ -2,3 +2,5 @@
 /node_modules
 /builds
 .env
+/setup/files/icons/*
+/setup/files/images/*
