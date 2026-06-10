@@ -3,7 +3,8 @@
   --background-color: {{backgroundColor}};
 
   --ads-background-color: {{adsBackgroundColor}};
-  --ads-border-color: {{addBorderColor}};
+  --ads-border-color: {{adsBorderColor}};
+  --ads-line-color: {{adsLineColor}};
 
   --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
   --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
@@ -39,6 +40,18 @@ body {
 button {
   border: none;
   cursor: pointer;
+  background: none;
+}
+
+dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+dialog::backdrop {
+  background: rgba(44, 52, 92, 0.55);
+  backdrop-filter: blur(2px);
 }
 
 select {
@@ -75,6 +88,16 @@ header a {
 
 header nav {
   display: flex;
+  align-items: center;
+}
+
+header nav button.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--buttons-transparent-text-color);
+  font-size: 16px;
 }
 
 header nav :first-child {
@@ -154,6 +177,58 @@ main > img {
   display: none;
 }
 
+.contact_dialog {
+  width: min(92vw, 420px);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(44, 52, 92, 0.24);
+}
+
+.contact_dialog_content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+  background: #fff;
+  color: var(--text-default-color);
+}
+
+.contact_dialog_content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: 0;
+}
+
+.contact_dialog_content header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text-default-color);
+}
+
+#close_contact_dialog {
+  background: none;
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+  font-weight: 600;
+}
+
+#contact_dialog_list {
+  display: grid;
+  gap: 12px;
+}
+
+.contact_dialog_item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(44, 52, 92, 0.12);
+  background: #fdfdfd;
+  color: var(--text-default-color);
+}
+
 @media screen and (min-width: 768px) {
   header {
     padding: 35px 45px 20px;
@@ -164,6 +239,10 @@ main > img {
   }
 
   header a {
+    font-size: 20px;
+  }
+
+  header nav button.contact {
     font-size: 20px;
   }
 

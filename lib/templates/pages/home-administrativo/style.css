@@ -3,7 +3,8 @@
   --background-color: {{backgroundColor}};
 
   --ads-background-color: {{adsBackgroundColor}};
-  --ads-border-color: {{addBorderColor}};
+  --ads-border-color: {{adsBorderColor}};
+  --ads-line-color: {{adsLineColor}};
 
   --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
   --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};

@@ -2,9 +2,8 @@ const company = {
   name: '',
   tenant: '',
   dns: '',
-  GTM: '',
   siteMode: '',
-  creci: '',
+  gtm: '',
   address: {
     street: '',
     number: '',
@@ -13,17 +12,26 @@ const company = {
     city: '',
     state: '',
   },
-  contact: {
-    email: '',
-    phone: '',
-    whatsapp: ''
-  },
+  contact: [
+    {
+      label: '',
+      number: '',
+      hasWhatsapp: false,
+      context: ''
+    }
+  ],
   citiesAndDistricts: [
     {
       name: '',
       districts: []
     }
   ],
+  creci: [
+    {
+      label: '',
+      number: ''
+    }
+  ]
 };
 
 const user = {
@@ -85,7 +93,8 @@ const theme = {
     },
     ads: {
       background: '',
-      border: ''
+      border: '',
+      line: ''
     }
   }
 }

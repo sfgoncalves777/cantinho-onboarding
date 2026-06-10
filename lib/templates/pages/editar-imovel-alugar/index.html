@@ -45,10 +45,19 @@
           </fieldset>
           <fieldset>
             <label for="publish">Publicar</label>
-            <select name="publish" id="publish">
+            <select name="publish" id="publish" onchange="handlePublishChange(this.value)">
               <option value="" disabled selected hidden>Selecione</option>
               <option value="true">Sim</option>
               <option value="false">Não</option>
+            </select>
+          </fieldset>
+          <fieldset class="hidden" id="camp_period">
+            <label for="period">Duração do anúncio</label>
+            <select name="period" id="period">
+              <option value="30" selected >30 dias</option>
+              <option value="60">60 dias</option>
+              <option value="90">90 dias</option>
+              <option value="forever">Permanente</option>
             </select>
           </fieldset>
         </div>

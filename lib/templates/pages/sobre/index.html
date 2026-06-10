@@ -17,7 +17,67 @@
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', '{{GTM}}');
+    })(window, document, 'script', 'dataLayer', '{{gtm}}');
+
+    const contactOptions = {{contactOptions}};
+    const creci = {{creci}};
+
+    const formatPhone = (phone) => {
+      const digits = phone.replace(/\D/g, '');
+
+      if (digits.length === 11) {
+        return digits.replace(
+          /(\d{2})(\d{5})(\d{4})/,
+          '($1) $2-$3'
+        );
+      }
+
+      if (digits.length === 10) {
+        return digits.replace(
+          /(\d{2})(\d{4})(\d{4})/,
+          '($1) $2-$3'
+        );
+      }
+
+      return phone;
+    }
+
+    const openDirectContact = (number) => {
+      const urlWhatsappRedirect = `https://wa.me/55${number}`;
+      window.open(urlWhatsappRedirect, '_blank', 'noopener,noreferrer');
+    };
+
+    const processContact = () => {
+      if (contactOptions.length === 1) {
+        const [contact] = contactOptions;
+        return openDirectContact(contact.number);
+      }
+      const contactDialogList = document.getElementById('contact_dialog_list');
+      contactDialogList.innerHTML = '';
+
+      contactOptions.forEach((contact) => {
+        const contactItem = contact.hasWhatsapp ? document.createElement('a') : document.createElement('div');
+        contactItem.className = 'contact_dialog_item';
+        if (contact.hasWhatsapp) {
+          contactItem.href = `https://wa.me/55${contact.number}`;
+          contactItem.target = '_blank';
+          contactItem.rel = 'noopener noreferrer';
+        }
+
+        const title = document.createElement('strong');
+        title.textContent = contact.label;
+
+        const phone = document.createElement('span');
+        phone.textContent = formatPhone(contact.number);
+
+        contactItem.appendChild(title);
+        contactItem.appendChild(phone);
+        contactDialogList.appendChild(contactItem);
+      });
+
+      const contactDialog = document.getElementById('contact_dialog');
+      contactDialog.showModal();
+    }
 
     document.addEventListener('DOMContentLoaded', function () {
       function setBodyFullHeight() {
@@ -28,20 +88,56 @@
       window.addEventListener("load", setBodyFullHeight);
       window.addEventListener("resize", setBodyFullHeight);
       window.addEventListener("orientationchange", setBodyFullHeight);
+
+      if (creci.length) {
+        const creciContent = document.getElementById('creci');
+        const title = document.createElement('h2');
+        title.textContent = creci.length > 1 ? 'CRECIs responsáveis' : 'CRECI responsável';
+
+        creciContent.appendChild(title);
+        const creciList = document.createElement('div');
+        creci.forEach((item) => {
+          const creciItem = document.createElement('div');
+          creciItem.innerHTML = `<div><strong>${item.label}</strong><p>CRECI ${item.number}</p></div>`;
+          creciList.appendChild(creciItem);
+        });
+        creciContent.appendChild(creciList);
+      }
+
+      const contactContainer = document.getElementById('contact');
+      contactOptions.forEach((contact) => {
+        const contactItem = contact.hasWhatsapp ? document.createElement('a') : document.createElement('div');
+        contactItem.className = 'contact_item';
+        if (contact.hasWhatsapp) {
+          contactItem.href = `https://wa.me/55${contact.number}`;
+          contactItem.target = '_blank';
+          contactItem.rel = 'noopener noreferrer';
+        }
+
+        const title = document.createElement('strong');
+        title.textContent = contact.label;
+
+        const phone = document.createElement('span');
+        phone.textContent = formatPhone(contact.number);
+
+        contactItem.appendChild(title);
+        contactItem.appendChild(phone);
+        contactContainer.appendChild(contactItem);
+      });
     });
   </script>
 </head>
 
 <body>
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id={{GTM}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{gtm}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <header>
     <a href="/index.html">
       <img src="/assets/images/{{logoFileName}}" alt="logo" />
     </a>
     <nav>
-      <a href="https://wa.me/55{{whatsapp}}" class="contact" target="_blank" rel="noopener noreferrer">Contato</a>
+      <button type="button" id="contact_button" class="contact" onClick="processContact()">Contato</button>
       <a href="/sobre/index.html">Sobre</a>
     </nav>
   </header>
@@ -50,8 +146,8 @@
       <div>
         <h1>Sobre nós</h1>
         <p>{{heroText}}</p>
-        <p>{{creci}}</p>
       </div>
+      <div id="creci"></div>
       <div class="data">
         <div>
           <h2>Endereço</h2>
@@ -60,15 +156,24 @@
         </div>
         <div>
           <h2>Contato</h2>
-          <a class="contact" href="https://wa.me/55{{whatsapp}}" target="_blank" rel="noopener noreferrer">
-            <span>{{phone}}</span>
-            {{iconWhatsapp}}
-          </a>
+          <div id="contact"></div>
         </div>
       </div>
     </section>
     <img src="/assets/images/{{heroImageFileName}}" alt="hero-image" />
   </main>
+  <dialog id="contact_dialog" class="contact_dialog">
+    <div class="contact_dialog_content">
+      <header>
+        <div>
+          <h2>Fale conosco</h2>
+        </div>
+        <button type="button" id="close_contact_dialog"
+          onclick="document.getElementById('contact_dialog').close()">Fechar</button>
+      </header>
+      <div id="contact_dialog_list"></div>
+    </div>
+  </dialog>
 </body>
 
 </html>

@@ -3,7 +3,8 @@
   --background-color: {{backgroundColor}};
 
   --ads-background-color: {{adsBackgroundColor}};
-  --ads-border-color: {{addBorderColor}};
+  --ads-border-color: {{adsBorderColor}};
+  --ads-line-color: {{adsLineColor}};
 
   --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
   --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
@@ -36,6 +37,23 @@ body {
   color: var(--text-default-color);
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+dialog::backdrop {
+  background: rgba(44, 52, 92, 0.55);
+  backdrop-filter: blur(2px);
+}
+
 a {
   text-decoration: none;
 }
@@ -64,6 +82,16 @@ header a {
 
 header nav {
   display: flex;
+  align-items: center;
+}
+
+header nav button.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--buttons-transparent-text-color);
+  font-size: 16px;
 }
 
 header nav :first-child {
@@ -105,11 +133,76 @@ main section div > div h2 {
   margin: 30px 0px 5px;
 }
 
-main section div > div > a {
+#contact > div, #contact > a {
   display: flex;
+  flex-direction: column;
+  color: var(--text-default-color);
+  margin-bottom: 7px;
+}
+
+.contact_dialog {
+  width: min(92vw, 420px);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(44, 52, 92, 0.24);
+}
+
+.contact_dialog_content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+  background: #fff;
+  color: var(--text-default-color);
+}
+
+.contact_dialog_content header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0;
+  border: 0;
+}
+
+.contact_dialog_content header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text-default-color);
+}
+
+#close_contact_dialog {
+  background: none;
+  font-size: 16px;
   color: var(--buttons-transparent-text-color);
-  font-size: clamp(16px, 3vw, 18px);
+  font-weight: 600;
+}
+
+#contact_dialog_list {
+  display: grid;
+  gap: 12px;
+}
+
+.contact_dialog_item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(44, 52, 92, 0.12);
+  background: #fdfdfd;
+  color: var(--text-default-color);
+}
+
+#creci h2 {
+  font-size: clamp(20px, 3vw, 23px);
+  font-weight: 500;
+  color: var(--text-title-color);
+  margin: 30px 0px 5px;
+}
+
+#creci > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
 }
 
 main section div > div > a > svg {
@@ -134,6 +227,10 @@ main > img {
   }
 
   header a {
+    font-size: 20px;
+  }
+
+  header nav button.contact {
     font-size: 20px;
   }
 

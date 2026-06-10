@@ -3,7 +3,8 @@
   --background-color: {{backgroundColor}};
 
   --ads-background-color: {{adsBackgroundColor}};
-  --ads-border-color: {{addBorderColor}};
+  --ads-border-color: {{adsBorderColor}};
+  --ads-line-color: {{adsLineColor}};
 
   --buttons-transparent-text-color: {{buttonsTransparentTextColor}};
   --buttons-transparent-border-color: {{buttonsTransparentBorderColor}};
@@ -83,6 +84,16 @@ header a {
 
 header nav {
   display: flex;
+  align-items: center;
+}
+
+header nav button.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--buttons-transparent-text-color);
+  font-size: 16px;
 }
 
 header>nav :first-child {
@@ -255,7 +266,7 @@ main fieldset select {
   width: fit-content;
   min-height: 32px;
   padding: 0;
-  background-color: transparent;
+  background: none;
   color: var(--buttons-transparent-text-color);
   font-size: 14px;
   font-weight: 500;
@@ -543,7 +554,7 @@ dialog::backdrop {
   align-items: center;
   justify-content: space-between;
   padding: 0 5px;
-  border-bottom: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--ads-line-color);
   height: 40px;
 }
 
@@ -644,6 +655,29 @@ dialog::backdrop {
 .property_popup .property_content .actions .footer_actions button svg {
   width: 17px;
   margin-right: 7px;
+}
+
+#creci h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-title-color);
+  margin: 25px 0 5px;
+}
+
+#creci > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  color: var(--text-title-color);
+  gap: 12px;
+}
+
+#creci > div span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#creci > div p {
+  margin: 0;
 }
 
 .register_demand {
@@ -768,6 +802,58 @@ dialog::backdrop {
   font-weight: 500;
 }
 
+.contact_dialog {
+  width: min(92vw, 420px);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(44, 52, 92, 0.24);
+}
+
+.contact_dialog_content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+  background: #fff;
+  color: var(--text-default-color);
+}
+
+.contact_dialog_content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: 0;
+}
+
+.contact_dialog_content header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text-default-color);
+}
+
+#close_contact_dialog {
+  background: none;
+  font-size: 16px;
+  color: var(--buttons-transparent-text-color);
+  font-weight: 600;
+}
+
+#contact_dialog_list {
+  display: grid;
+  gap: 12px;
+}
+
+.contact_dialog_item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(44, 52, 92, 0.12);
+  background: #fdfdfd;
+  color: var(--text-default-color);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -787,6 +873,10 @@ dialog::backdrop {
   }
 
   header a {
+    font-size: 20px;
+  }
+
+  header nav button.contact {
     font-size: 20px;
   }
 
@@ -861,8 +951,7 @@ dialog::backdrop {
   }
 
   .property_popup .property_content .carrosel {
-    width: 80%;
-    max-width: 500px;
+    width: 100%;
   }
 
   .property_popup .property_content .values {

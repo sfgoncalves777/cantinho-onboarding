@@ -17,14 +17,14 @@
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', '{{GTM}}');
+    })(window, document, 'script', 'dataLayer', '{{gtm}}');
   </script>
   <script src="main.js" defer></script>
 </head>
 
 <body>
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id={{GTM}}" height="0" width="0"
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{gtm}}" height="0" width="0"
       style="display:none;visibility:hidden"></iframe>
   </noscript>
   <header>
@@ -32,7 +32,7 @@
       <img src="/assets/images/{{logoFileName}}" alt="logo" />
     </a>
     <nav>
-      <a href="https://wa.me/{{whatsapp}}" class="contact" target="_blank" rel="noopener noreferrer">Contato</a>
+      <button type="button" id="contact_button" class="contact" onClick="processContact()">Contato</button>
       <a href="/sobre/index.html">Sobre</a>
     </nav>
   </header>
@@ -223,6 +223,18 @@
       <span>Carregando...</span>
     </dialog>
   </main>
+
+  <dialog id="contact_dialog" class="contact_dialog">
+    <div class="contact_dialog_content">
+      <header>
+        <div>
+          <h2>Fale conosco</h2>
+        </div>
+        <button type="button" id="close_contact_dialog" onclick="document.getElementById('contact_dialog').close()">Fechar</button>
+      </header>
+      <div id="contact_dialog_list"></div>
+    </div>
+  </dialog>
 </body>
 
 </html>

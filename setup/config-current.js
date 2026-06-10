@@ -1,68 +1,77 @@
 const company = {
-  name: 'Cantinho',
-  tenant: 'cantinho',
-  dns: 'www.cantinho.co',
-  GTM: 'GTM-5V53PR5N',
+  name: 'Campos Ribeiro Imóveis',
+  tenant: 'campos-ribeiro-imoveis',
+  dns: 'www.camposribeiroimoveis.cantinho.co',
   siteMode: 'both',
+  gtm: 'GTM-XXXXXXX',
   address: {
-    street: 'Rua Caiana',
+    street: 'Rua Teste',
     number: '491',
-    complement: 'Ap 102',
-    district: 'Área de Lazer',
-    city: 'Espera Feliz',
+    district: 'Bairro Teste',
+    city: 'Carangola',
     state: 'MG',
   },
-  contact: {
-    email: 'go.silvani@gmail.com',
-    phone: '32984835145',
-    whatsapp: '32984835145'
-  },
-  citiesAndDistricts: [
+  contacts: [
     {
-      name: 'Espera Feliz - MG',
-      districts: [
-        'Área de Lazer',
-        'Centro',
-        'Floresta',
-        'João Clara',
-        'João do Roque',
-        'Mineradora',
-        'Novo Horizonte',
-        'Patronato',
-        'Retas',
-        'Santa Cecília',
-        'Santa Inês',
-        'Santa Luzia',
-        'São Francisco',
-        'Vale do Sol 1',
-        'Vale do Sol 2',
-        'Waltair',
-        'Zona Rural'
-      ]
+      label: 'Telefone',
+      number: '32984835145',
+      hasWhatsapp: true,
+      context: 'both'
     }
   ],
+  citiesAndDistricts: [
+    {
+      name: 'Carangola - MG',
+      districts: [
+        'Aeroporto',
+        'Amendoeira',
+        "Caixa D'Água",
+        'Centro',
+        'Chevrand',
+        'Coroado',
+        'Eldorado',
+        'Floresta',
+        'Lacerdina',
+        'Novos Tempos',
+        'Ouro Verde',
+        'Panorama',
+        'Santa Emília',
+        'Santa Maria',
+        'Santo Onofre',
+        'Triângulo',
+        'Varginha',
+        'Zona Rural'
+      ]
+    },
+  ],
+  creci: [
+    {
+      label: 'Silvani Gonçalves Campos Ribeiro',
+      number: '12345-F/MG'
+    }
+  ]
 };
 
 const user = {
-  name: 'Silvani Gonçalves',
-  email: 'go.silvani@gmail.com',
+  name: 'Demonstração',
+  email: 'camposribeiroimoveis@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
 
 const theme = {
   logoFileName: 'logo.svg',
-  faviconFileName: 'favicon.ico',
+  faviconFileName: 'favicon.svg',
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Estamos aqui para ajudar você a encontrar o seu canto.',
-      metaDescription: 'Encontre os melhores imóveis no cantinho.co'
+      heroText: 'Transformamos seu sonho em realidade.',
+      metaDescription: 'Encontre os melhores imóveis com Campos Ribeiro Imóveis'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O Cantinho é uma plataforma criada para ajudar corretores e imobiliárias a divulgar imóveis, organizar atendimentos e conectar imóveis com pessoas que realmente estão procurando por eles. Além do portal da cidade, cada parceiro também possui um site personalizado exclusivo para os seus imóveis, com ferramentas de cadastro e notificação automática de clientes interessados.',
-      metaDescription: 'Saiba mais sobre o cantinho.'
+      heroText: 'Conheça a Campos Ribeiro Imóveis e nossa dedicação em oferecer atendimento de qualidade, transparência e as melhores oportunidades para você comprar / vender e alugar.',
+      metaDescription: 'Saiba mais sobre a Campos Ribeiro Imóveis.'
     },
     propertySale: {
       metaDescription: 'Confira imóveis à venda em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
@@ -72,16 +81,16 @@ const theme = {
     }
   },
   colors: {
-    line: '#D0A616',
+    line: '#303092',
     background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#D0A616',
-        border: '#D0A616'
+        text: '#303092',
+        border: '#303092'
       },
       solid: {
-        background: '#D0A616',
-        text: '#2C345C'
+        background: '#303092',
+        text: '#FCFDF5'
       },
       remove: {
         background: '#B21313',
@@ -89,20 +98,21 @@ const theme = {
       }
     },
     text: {
-      title: '#2C345C',
-      default: '#2C345C',
-      highlight: '#D0A616'
+      title: '#201D1E',
+      default: '#201D1E',
+      highlight: '#303092'
     },
     forms: {
-      label: '#2C345C',
+      label: '#201D1E',
       input: {
         background: '#D5DADE',
-        text: '#2C345C'
+        text: '#201D1E'
       }
     },
     ads: {
       background: '#fff',
-      border: '#ddd'
+      border: '#ddd',
+      line: '#303092'
     }
   }
 }
