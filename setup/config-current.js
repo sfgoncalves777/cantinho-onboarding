@@ -1,22 +1,30 @@
 const company = {
-  name: 'Cantinho',
-  tenant: 'cantinho',
-  dns: 'www.cantinho.co',
-  GTM: 'GTM-5V53PR5N',
-  siteMode: 'both',
+  name: 'Cantinho Client Sale',
+  tenant: 'cantinho-client-sale',
+  dns: 'www.test-client-sale.cantinho.co',
+  siteMode: 'sale',
+  gtm: 'GTM-5V53PR5N',
   address: {
-    street: 'Rua Caiana',
+    street: 'Rua caiana',
     number: '491',
-    complement: 'Ap 102',
     district: 'Área de Lazer',
     city: 'Espera Feliz',
     state: 'MG',
   },
-  contact: {
-    email: 'go.silvani@gmail.com',
-    phone: '32984835145',
-    whatsapp: '32984835145'
-  },
+  contacts: [
+    {
+      label: 'Equipe Cantinho',
+      number: '32984128641',
+      hasWhatsapp: true,
+      context: 'general'
+    },
+    {
+      label: 'Silvani - Founder',
+      number: '32984835145',
+      hasWhatsapp: true,
+      context: 'both'
+    }
+  ],
   citiesAndDistricts: [
     {
       name: 'Espera Feliz - MG',
@@ -39,13 +47,13 @@ const company = {
         'Waltair',
         'Zona Rural'
       ]
-    }
-  ],
+    },
+  ]
 };
 
 const user = {
   name: 'Silvani Gonçalves',
-  email: 'go.silvani@gmail.com',
+  email: 'gosilvani@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -56,19 +64,19 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Estamos aqui para ajudar você a encontrar o seu canto.',
-      metaDescription: 'Encontre os melhores imóveis no cantinho.co'
+      heroText: 'Estamos aqui para ajudar você a contrar o seu cantinho.',
+      metaDescription: 'Encontre imóveis para alugar e comprar nas cidades atendidas pelo Cantinho. Casas, apartamentos, terrenos e imóveis comerciais'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O Cantinho é uma plataforma criada para ajudar corretores e imobiliárias a divulgar imóveis, organizar atendimentos e conectar imóveis com pessoas que realmente estão procurando por eles. Além do portal da cidade, cada parceiro também possui um site personalizado exclusivo para os seus imóveis, com ferramentas de cadastro e notificação automática de clientes interessados.',
-      metaDescription: 'Saiba mais sobre o cantinho.'
+      heroText: 'O Cantinho nasceu com o objetivo de facilitar a conexão entre pessoas que procuram imóveis e os profissionais que os anunciam.\nNossa proposta é reunir os imóveis disponíveis de cada cidade em um único lugar, tornando a busca mais simples para quem procura e a divulgação mais eficiente para corretores e imobiliárias.\nAlém do marketplace, oferecemos ferramentas para ajudar profissionais do mercado imobiliário a divulgar seus imóveis, organizar sua presença digital e se conectar com potenciais clientes.',
+      metaDescription: 'Conheça o Cantinho, uma plataforma que conecta pessoas que procuram imóveis a corretores e imobiliárias locais, tornando a busca e a divulgação mais simples e eficiente.'
     },
     propertySale: {
-      metaDescription: 'Confira imóveis à venda em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
+      metaDescription: 'Encontre casas, apartamentos, terrenos e imóveis comerciais para à venda em {{city}} no Cantinho.'
     },
     propertyRent: {
-      metaDescription: 'Encontre imóveis para alugar em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
+      metaDescription: 'Encontre casas, apartamentos, terrenos e imóveis comerciais para alugar em {{city}} no Cantinho.'
     }
   },
   colors: {
@@ -102,7 +110,8 @@ const theme = {
     },
     ads: {
       background: '#fff',
-      border: '#ddd'
+      border: '#ddd',
+      line: '#D0A616'
     }
   }
 }
