@@ -1,19 +1,25 @@
 const company = {
-  name: 'Campos Ribeiro Imóveis',
-  tenant: 'campos-ribeiro-imoveis',
-  dns: 'www.camposribeiroimoveis.cantinho.co',
-  siteMode: 'both',
-  gtm: 'GTM-XXXXXXX',
+  name: 'Cantinho Client Sale',
+  tenant: 'cantinho-client-sale',
+  dns: 'www.test-client-sale.cantinho.co',
+  siteMode: 'sale',
+  gtm: 'GTM-5V53PR5N',
   address: {
-    street: 'Rua Teste',
+    street: 'Rua caiana',
     number: '491',
-    district: 'Bairro Teste',
-    city: 'Carangola',
+    district: 'Área de Lazer',
+    city: 'Espera Feliz',
     state: 'MG',
   },
   contacts: [
     {
-      label: 'Telefone',
+      label: 'Equipe Cantinho',
+      number: '32984128641',
+      hasWhatsapp: true,
+      context: 'general'
+    },
+    {
+      label: 'Silvani - Founder',
       number: '32984835145',
       hasWhatsapp: true,
       context: 'both'
@@ -21,76 +27,69 @@ const company = {
   ],
   citiesAndDistricts: [
     {
-      name: 'Carangola - MG',
+      name: 'Espera Feliz - MG',
       districts: [
-        'Aeroporto',
-        'Amendoeira',
-        "Caixa D'Água",
+        'Área de Lazer',
         'Centro',
-        'Chevrand',
-        'Coroado',
-        'Eldorado',
         'Floresta',
-        'Lacerdina',
-        'Novos Tempos',
-        'Ouro Verde',
-        'Panorama',
-        'Santa Emília',
-        'Santa Maria',
-        'Santo Onofre',
-        'Triângulo',
-        'Varginha',
+        'João Clara',
+        'João do Roque',
+        'Mineradora',
+        'Novo Horizonte',
+        'Patronato',
+        'Retas',
+        'Santa Cecília',
+        'Santa Inês',
+        'Santa Luzia',
+        'São Francisco',
+        'Vale do Sol 1',
+        'Vale do Sol 2',
+        'Waltair',
         'Zona Rural'
       ]
     },
-  ],
-  creci: [
-    {
-      label: 'Silvani Gonçalves Campos Ribeiro',
-      number: '12345-F/MG'
-    }
   ]
 };
 
 const user = {
-  name: 'Demonstração',
-  email: 'camposribeiroimoveis@gmail.com',
+  name: 'Silvani Gonçalves',
+  email: 'gosilvani@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
 
 const theme = {
   logoFileName: 'logo.svg',
-  faviconFileName: 'favicon.svg',
+  faviconFileName: 'favicon.ico',
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Transformamos seu sonho em realidade.',
-      metaDescription: 'Encontre os melhores imóveis com Campos Ribeiro Imóveis'
+      heroText: 'Estamos aqui para ajudar você a contrar o seu cantinho.',
+      metaDescription: 'Encontre imóveis para alugar e comprar nas cidades atendidas pelo Cantinho. Casas, apartamentos, terrenos e imóveis comerciais'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Conheça a Campos Ribeiro Imóveis e nossa dedicação em oferecer atendimento de qualidade, transparência e as melhores oportunidades para você comprar / vender e alugar.',
-      metaDescription: 'Saiba mais sobre a Campos Ribeiro Imóveis.'
+      heroText: 'O Cantinho nasceu com o objetivo de facilitar a conexão entre pessoas que procuram imóveis e os profissionais que os anunciam.\nNossa proposta é reunir os imóveis disponíveis de cada cidade em um único lugar, tornando a busca mais simples para quem procura e a divulgação mais eficiente para corretores e imobiliárias.\nAlém do marketplace, oferecemos ferramentas para ajudar profissionais do mercado imobiliário a divulgar seus imóveis, organizar sua presença digital e se conectar com potenciais clientes.',
+      metaDescription: 'Conheça o Cantinho, uma plataforma que conecta pessoas que procuram imóveis a corretores e imobiliárias locais, tornando a busca e a divulgação mais simples e eficiente.'
     },
     propertySale: {
-      metaDescription: 'Confira imóveis à venda em {{city}}. Casas, apartamentos e terrenos com ótimas oportunidades para você investir ou morar.'
+      metaDescription: 'Encontre casas, apartamentos, terrenos e imóveis comerciais para à venda em {{city}} no Cantinho.'
     },
     propertyRent: {
-      metaDescription: 'Encontre imóveis para alugar em {{city}}. Opções ideais para morar com praticidade, segurança e excelente custo-benefício.'
+      metaDescription: 'Encontre casas, apartamentos, terrenos e imóveis comerciais para alugar em {{city}} no Cantinho.'
     }
   },
   colors: {
-    line: '#303092',
+    line: '#D0A616',
     background: '#F4F4F4',
     buttons: {
       transparent: {
-        text: '#303092',
-        border: '#303092'
+        text: '#D0A616',
+        border: '#D0A616'
       },
       solid: {
-        background: '#303092',
-        text: '#FCFDF5'
+        background: '#D0A616',
+        text: '#2C345C'
       },
       remove: {
         background: '#B21313',
@@ -98,21 +97,21 @@ const theme = {
       }
     },
     text: {
-      title: '#201D1E',
-      default: '#201D1E',
-      highlight: '#303092'
+      title: '#2C345C',
+      default: '#2C345C',
+      highlight: '#D0A616'
     },
     forms: {
-      label: '#201D1E',
+      label: '#2C345C',
       input: {
         background: '#D5DADE',
-        text: '#201D1E'
+        text: '#2C345C'
       }
     },
     ads: {
       background: '#fff',
       border: '#ddd',
-      line: '#303092'
+      line: '#D0A616'
     }
   }
 }
