@@ -1,25 +1,19 @@
 const company = {
-  name: 'Cantinho Client Sale',
-  tenant: 'cantinho-client-sale',
-  dns: 'www.test-client-sale.cantinho.co',
-  siteMode: 'sale',
-  gtm: 'GTM-5V53PR5N',
+  name: 'Teste Cantinho',
+  tenant: 'cantinho-teste',
+  dns: 'www.cantinho.co',
+  siteMode: 'both',
+  gtm: 'GTM-XXXXXXXX',
   address: {
-    street: 'Rua caiana',
-    number: '491',
-    district: 'Área de Lazer',
-    city: 'Espera Feliz',
-    state: 'MG',
+    street: 'Demonstração',
+    number: 'X',
+    district: 'X',
+    city: 'X',
+    state: 'XX',
   },
   contacts: [
     {
-      label: 'Equipe Cantinho',
-      number: '32984128641',
-      hasWhatsapp: true,
-      context: 'general'
-    },
-    {
-      label: 'Silvani - Founder',
+      label: 'Atendimento',
       number: '32984835145',
       hasWhatsapp: true,
       context: 'both'
@@ -27,33 +21,33 @@ const company = {
   ],
   citiesAndDistricts: [
     {
-      name: 'Espera Feliz - MG',
-      districts: [
-        'Área de Lazer',
-        'Centro',
-        'Floresta',
-        'João Clara',
-        'João do Roque',
-        'Mineradora',
-        'Novo Horizonte',
-        'Patronato',
-        'Retas',
-        'Santa Cecília',
-        'Santa Inês',
-        'Santa Luzia',
-        'São Francisco',
-        'Vale do Sol 1',
-        'Vale do Sol 2',
-        'Waltair',
-        'Zona Rural'
+      "name": "Espera Feliz - MG",
+      "districts": [
+        "Área de Lazer",
+        "Centro",
+        "Floresta",
+        "João Clara",
+        "João do Roque",
+        "Mineradora",
+        "Novo Horizonte",
+        "Patronato",
+        "Retas",
+        "Santa Cecília",
+        "Santa Inês",
+        "Santa Luzia",
+        "São Francisco",
+        "Vale do Sol 1",
+        "Vale do Sol 2",
+        "Waltair",
+        "Zona Rural"
       ]
-    },
+    }
   ]
 };
 
 const user = {
-  name: 'Silvani Gonçalves',
-  email: 'gosilvani@gmail.com',
+  name: 'Demonstração',
+  email: 'demonstracao@gmail.com',
   password: '10203050',
   type: 'companyAdmin',
 };
@@ -64,19 +58,19 @@ const theme = {
   contents: {
     home: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'Estamos aqui para ajudar você a contrar o seu cantinho.',
-      metaDescription: 'Encontre imóveis para alugar e comprar nas cidades atendidas pelo Cantinho. Casas, apartamentos, terrenos e imóveis comerciais'
+      heroText: 'Demonstração',
+      metaDescription: 'Encontre imóveis para comprar ou alugar. Casas, apartamentos, terrenos e oportunidades anunciadas por corretores e imobiliárias da sua cidade.'
     },
     about: {
       heroImageFileName: 'hero-image.svg',
-      heroText: 'O Cantinho nasceu com o objetivo de facilitar a conexão entre pessoas que procuram imóveis e os profissionais que os anunciam.\nNossa proposta é reunir os imóveis disponíveis de cada cidade em um único lugar, tornando a busca mais simples para quem procura e a divulgação mais eficiente para corretores e imobiliárias.\nAlém do marketplace, oferecemos ferramentas para ajudar profissionais do mercado imobiliário a divulgar seus imóveis, organizar sua presença digital e se conectar com potenciais clientes.',
-      metaDescription: 'Conheça o Cantinho, uma plataforma que conecta pessoas que procuram imóveis a corretores e imobiliárias locais, tornando a busca e a divulgação mais simples e eficiente.'
+      heroText: 'Demonstrativo.',
+      metaDescription: 'Conheça o Cantinho, um marketplace imobiliário que conecta você a imóveis, corretores e imobiliárias da sua cidade.'
     },
     propertySale: {
-      metaDescription: 'Encontre casas, apartamentos, terrenos e imóveis comerciais para à venda em {{city}} no Cantinho.'
+      metaDescription: 'Encontre imóveis à venda em {{city}}. Casas, apartamentos, terrenos e oportunidades anunciadas por corretores e imobiliárias locais.'
     },
     propertyRent: {
-      metaDescription: 'Encontre casas, apartamentos, terrenos e imóveis comerciais para alugar em {{city}} no Cantinho.'
+      metaDescription: 'Encontre imóveis para alugar em {{city}}. Casas, apartamentos e oportunidades anunciadas por corretores e imobiliárias locais.'
     }
   },
   colors: {
@@ -93,7 +87,7 @@ const theme = {
       },
       remove: {
         background: '#B21313',
-        text: '#F2F2F2'
+        text: '#FCFDF5'
       }
     },
     text: {

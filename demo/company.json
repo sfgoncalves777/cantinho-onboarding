@@ -1,0 +1,52 @@
+{
+  "_id": {
+    "$oid": "6a67a527e93e015f89748c9e"
+  },
+  "name": "Demonstração Cantinho",
+  "tenant": "cantinho-demonstracao",
+  "dns": "www.demonstracao.cantinho.co",
+  "siteMode": "both",
+  "gtm": "GTM-XXXXXXXX",
+  "directory": "cantinho-demonstracao",
+  "address": {
+    "street": "Demonstração",
+    "number": "X",
+    "district": "X",
+    "city": "X",
+    "state": "XX"
+  },
+  "contacts": [
+    {
+      "label": "Atendimento",
+      "number": "33988952659",
+      "hasWhatsapp": true,
+      "context": "both"
+    }
+  ],
+  "citiesAndDistricts": [
+    {
+      "name": "Manhuaçu - MG",
+      "districts": [
+        "Alfa Sul",
+        "Bom Jardim",
+        "Centro",
+        "Coqueiro",
+        "Santa Luzia",
+        "Zona Rural"
+      ]
+    }
+  ],
+  "status": {
+    "name": "active",
+    "timestamp": {
+      "$date": "2026-07-27T18:36:23.117Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2026-07-27T18:36:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-27T18:36:23.117Z"
+  },
+  "certificateArn": "arn:aws:acm:us-east-1:357225327880:certificate/88beec90-09ab-4cbf-a121-b9d59cd48dc3"
+}

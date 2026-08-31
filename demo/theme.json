@@ -1,0 +1,71 @@
+{
+  "_id": {
+    "$oid": "6a67a527e93e015f89748ca0"
+  },
+  "theme": {
+    "logoFileName": "logo.svg",
+    "faviconFileName": "favicon.svg",
+    "contents": {
+      "home": {
+        "heroImageFileName": "hero-image.svg",
+        "heroText": "Transformando seus sonhos em realidade!",
+        "metaDescription": "Encontre imóveis para comprar ou alugar. Casas, apartamentos, terrenos e oportunidades anunciadas por corretores e imobiliárias da sua cidade."
+      },
+      "about": {
+        "heroImageFileName": "hero-image.svg",
+        "heroText": "Demonstrativo.",
+        "address": "Demonstração, nº X , X",
+        "city": "X - XX",
+        "metaDescription": "Conheça o Cantinho, um marketplace imobiliário que conecta você a imóveis, corretores e imobiliárias da sua cidade."
+      },
+      "propertySale": {
+        "metaDescription": "Encontre imóveis à venda em {{city}}. Casas, apartamentos, terrenos e oportunidades anunciadas por corretores e imobiliárias locais."
+      },
+      "propertyRent": {
+        "metaDescription": "Encontre imóveis para alugar em {{city}}. Casas, apartamentos e oportunidades anunciadas por corretores e imobiliárias locais."
+      }
+    },
+    "colors": {
+      "line": "#14202F",
+      "background": "#FFFDFE",
+      "buttons": {
+        "transparent": {
+          "text": "#14202F",
+          "border": "#14202F"
+        },
+        "solid": {
+          "background": "#14202F",
+          "text": "#B28A54"
+        },
+        "remove": {
+          "background": "#B21313",
+          "text": "#FCFDF5"
+        }
+      },
+      "text": {
+        "title": "#010207",
+        "default": "#010207",
+        "highlight": "#FAC60D"
+      },
+      "forms": {
+        "label": "#010207",
+        "input": {
+          "background": "#D5DADE",
+          "text": "#010207"
+        }
+      },
+      "ads": {
+        "background": "#fff",
+        "border": "#ddd",
+        "line": "#14202F"
+      }
+    }
+  },
+  "tenant": "cantinho-demonstracao",
+  "createdAt": {
+    "$date": "2026-07-27T18:36:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-27T18:36:23.117Z"
+  }
+}
